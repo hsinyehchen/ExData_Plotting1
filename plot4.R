@@ -13,7 +13,7 @@ tbl_feb <- tbl[tbl$TimeDate >= date_beg & tbl$TimeDate < date_end,]
 png("plot4.png")
 par(mfrow=c(2,2))
 
-plot(tbl_feb$TimeDate,tbl_feb$Global_active_power, type="n", ylab="Global Active Power (kilowatts)", xlab="")
+plot(tbl_feb$TimeDate,tbl_feb$Global_active_power, type="n", ylab="Global Active Power", xlab="")
 lines(tbl_feb$TimeDate,tbl_feb$Global_active_power)
 
 plot(tbl_feb$TimeDate,tbl_feb$Voltage, type="n", ylab="Voltage", xlab="datetime")
@@ -23,7 +23,7 @@ plot(tbl_feb$TimeDate,tbl_feb$Sub_metering_1, type="n", ylab="Energy sub meterin
 lines(tbl_feb$TimeDate,tbl_feb$Sub_metering_1, col="Black")
 lines(tbl_feb$TimeDate,tbl_feb$Sub_metering_2, col="Red")
 lines(tbl_feb$TimeDate,tbl_feb$Sub_metering_3, col="Blue")
-legend("topright", legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lwd=1, col=c("Black","Red","Blue"))
+legend("topright", legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lwd=1, col=c("Black","Red","Blue"), bty="n")
 
 plot(tbl_feb$TimeDate,tbl_feb$Global_reactive_power, type="n", ylab="Global_reactive_power", xlab="datetime")
 lines(tbl_feb$TimeDate,tbl_feb$Global_reactive_power)
